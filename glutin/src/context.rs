@@ -228,9 +228,9 @@ pub trait ContextCurrentState: std::fmt::Debug + Clone {}
 impl ContextCurrentState for PossiblyCurrent {}
 impl ContextCurrentState for NotCurrent {}
 
-trait FailToCompileIfNotSendSync
-where
-    Self: Send + Sync,
-{
-}
-impl FailToCompileIfNotSendSync for Context<NotCurrent> {}
+//trait FailToCompileIfNotSendSync
+//where
+//    Self: Send + Sync,
+//{
+//}
+//impl FailToCompileIfNotSendSync for Context<NotCurrent> {}

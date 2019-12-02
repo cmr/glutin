@@ -80,7 +80,7 @@ impl Context {
         size: dpi::PhysicalSize,
     ) -> Result<Self, CreationError> {
         let wb = winit::window::WindowBuilder::new()
-            .with_visibility(false)
+            .with_visible(false)
             .with_inner_size(size.to_logical(1.));
 
         Self::new_windowed(wb, el, pf_reqs, gl_attr).map(|(w, c)| match c {
@@ -163,7 +163,7 @@ impl Context {
     #[inline]
     pub fn swap_buffers_with_damage(
         &self,
-        rects: &[Rect],
+        _rects: &[crate::Rect],
     ) -> Result<(), ContextError> {
         Err(ContextError::OsError("buffer damage not suported".to_string()))
     }
